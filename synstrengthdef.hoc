@@ -1,0 +1,1323 @@
+
+objref JssVal
+JssVal = new Vector(10)
+
+
+JssVal.x[0] = 0.0014
+JssVal.x[1] = 0.0014/2
+JssVal.x[2] = 0.0014*2
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_nRT_to_TCR = JssVal.x[rttc]
+
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_TCR_to_deepaxax = JssVal.x[tci6]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_TCR_to_deepbask = JssVal.x[tci6]
+
+JssVal.x[0] = 0.00075
+JssVal.x[1] = 0.000375
+JssVal.x[2] = 0.0015
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_TCR_to_nRT = JssVal.x[tcrt]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_TCR_to_nontuftRS = JssVal.x[tce6]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_TCR_to_spinstell = JssVal.x[tce4]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_TCR_to_supaxax = JssVal.x[tci2]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_TCR_to_supbask = JssVal.x[tci2]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_TCR_to_suppyrFRB = JssVal.x[tce2]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_TCR_to_suppyrRS = JssVal.x[tce2]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_TCR_to_tuftIB = JssVal.x[tce5]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_TCR_to_tuftRS = JssVal.x[tce5]
+
+JssVal.x[0] = 0.00075
+JssVal.x[1] = 0.000375
+JssVal.x[2] = 0.0015
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_TCR = JssVal.x[e6tc]
+
+JssVal.x[0] = 0.002
+JssVal.x[1] = 0.001
+JssVal.x[2] = 0.004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_deepLTS = JssVal.x[e6i6]
+
+JssVal.x[0] = 0.003
+JssVal.x[1] = 0.0015
+JssVal.x[2] = 0.006
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_deepaxax = JssVal.x[e6i6]
+
+JssVal.x[0] = 0.003
+JssVal.x[1] = 0.0015
+JssVal.x[2] = 0.006
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_deepbask = JssVal.x[e6i6]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_nRT = JssVal.x[e6rt]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_nontuftRS = JssVal.x[e6e6]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_spinstell = JssVal.x[e6e4]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_supLTS = JssVal.x[e6i2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_supaxax = JssVal.x[e6i2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_supbask = JssVal.x[e6i2]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_suppyrFRB = JssVal.x[e6e2]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_suppyrRS = JssVal.x[e6e2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_tuftIB = JssVal.x[e6e5]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_nontuftRS_to_tuftRS = JssVal.x[e6e5]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_deepLTS = JssVal.x[e4i6]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_deepaxax = JssVal.x[e4i6]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_deepbask = JssVal.x[e4i6]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_nontuftRS = JssVal.x[e4e6]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_spinstell = JssVal.x[e4e4]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_supLTS = JssVal.x[e4i2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_supaxax = JssVal.x[e4i2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_supbask = JssVal.x[e4i2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_suppyrFRB = JssVal.x[e4e2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_suppyrRS = JssVal.x[e4e2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_tuftIB = JssVal.x[e4e5]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_spinstell_to_tuftRS = JssVal.x[e4e5]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrFRB_to_deepLTS = JssVal.x[e2i6]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrFRB_to_deepaxax = JssVal.x[e2i6]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrFRB_to_deepbask = JssVal.x[e2i6]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrFRB_to_nontuftRS = JssVal.x[e2e6]
+
+gAMPA_suppyrFRB_to_spinstell = 0
+
+JssVal.x[0] = 0.002
+JssVal.x[1] = 0.001
+JssVal.x[2] = 0.004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gAMPA_suppyrFRB_to_supLTS = JssVal.x[e2i2]
+
+JssVal.x[0] = 0.003
+JssVal.x[1] = 0.0015
+JssVal.x[2] = 0.006
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gAMPA_suppyrFRB_to_supaxax = JssVal.x[e2i2]
+
+JssVal.x[0] = 0.003
+JssVal.x[1] = 0.0015
+JssVal.x[2] = 0.006
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gAMPA_suppyrFRB_to_supbask = JssVal.x[e2i2]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+AMPA_suppyrFRB_to_suppyrFRB = JssVal.x[e2e2]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gAMPA_suppyrFRB_to_suppyrRS = JssVal.x[e2e2]
+
+JssVal.x[0] = 0.0001
+JssVal.x[1] = 5e-005
+JssVal.x[2] = 0.0002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrFRB_to_tuftIB = JssVal.x[e2e5]
+
+JssVal.x[0] = 0.0001
+JssVal.x[1] = 5e-005
+JssVal.x[2] = 0.0002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrFRB_to_tuftRS = JssVal.x[e2e5]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrRS_to_deepLTS = JssVal.x[e2i6]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrRS_to_deepaxax = JssVal.x[e2i6]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrRS_to_deepbask = JssVal.x[e2i6]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrRS_to_nontuftRS = JssVal.x[e2e6]
+
+gAMPA_suppyrRS_to_spinstell = 0
+
+JssVal.x[0] = 0.002
+JssVal.x[1] = 0.001
+JssVal.x[2] = 0.004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gAMPA_suppyrRS_to_supLTS = JssVal.x[e2i2]
+
+JssVal.x[0] = 0.003
+JssVal.x[1] = 0.0015
+JssVal.x[2] = 0.006
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gAMPA_suppyrRS_to_supaxax = JssVal.x[e2i2]
+
+JssVal.x[0] = 0.003
+JssVal.x[1] = 0.0015
+JssVal.x[2] = 0.006
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gAMPA_suppyrRS_to_supbask = JssVal.x[e2i2]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gAMPA_suppyrRS_to_suppyrFRB = JssVal.x[e2e2]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gAMPA_suppyrRS_to_suppyrRS = JssVal.x[e2e2]
+
+JssVal.x[0] = 0.0001
+JssVal.x[1] = 5e-005
+JssVal.x[2] = 0.0002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrRS_to_tuftIB = JssVal.x[e2e5]
+
+JssVal.x[0] = 0.0001
+JssVal.x[1] = 5e-005
+JssVal.x[2] = 0.0002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_suppyrRS_to_tuftRS = JssVal.x[e2e5]
+
+JssVal.x[0] = 0.002
+JssVal.x[1] = 0.001
+JssVal.x[2] = 0.004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_deepLTS = JssVal.x[e5i6]
+
+JssVal.x[0] = 0.003
+JssVal.x[1] = 0.0015
+JssVal.x[2] = 0.006
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_deepaxax = JssVal.x[e5i6]
+
+JssVal.x[0] = 0.003
+JssVal.x[1] = 0.0015
+JssVal.x[2] = 0.006
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_deepbask = JssVal.x[e5i6]
+
+JssVal.x[0] = 0.002
+JssVal.x[1] = 0.001
+JssVal.x[2] = 0.004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_nontuftRS = JssVal.x[e5e6]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_spinstell = JssVal.x[e5e4]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_supLTS = JssVal.x[e5i2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_supaxax = JssVal.x[e5i2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_supbask = JssVal.x[e5i2]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_suppyrFRB = JssVal.x[e5e2]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_suppyrRS = JssVal.x[e5e2]
+
+JssVal.x[0] = 0.002
+JssVal.x[1] = 0.001
+JssVal.x[2] = 0.004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_tuftIB = JssVal.x[e5e5]
+
+JssVal.x[0] = 0.002
+JssVal.x[1] = 0.001
+JssVal.x[2] = 0.004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftIB_to_tuftRS = JssVal.x[e5e5]
+
+JssVal.x[0] = 0.002
+JssVal.x[1] = 0.001
+JssVal.x[2] = 0.004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_deepLTS = JssVal.x[e5i6]
+
+JssVal.x[0] = 0.003
+JssVal.x[1] = 0.0015
+JssVal.x[2] = 0.006
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_deepaxax = JssVal.x[e5i6]
+
+JssVal.x[0] = 0.003
+JssVal.x[1] = 0.0015
+JssVal.x[2] = 0.006
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_deepbask = JssVal.x[e5i6]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_nontuftRS = JssVal.x[e5e6]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_spinstell = JssVal.x[e5e4]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_supLTS = JssVal.x[e5i2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_supaxax = JssVal.x[e5i2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_supbask = JssVal.x[e5i2]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_suppyrFRB = JssVal.x[e5e2]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_suppyrRS = JssVal.x[e5e2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_tuftIB = JssVal.x[e5e5]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gAMPA_tuftRS_to_tuftRS = JssVal.x[e5e5]
+
+JssVal.x[0] = 5e-005
+JssVal.x[1] = 2.5e-005
+JssVal.x[2] = 0.0001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepLTS_to_deepLTS = JssVal.x[i6i6]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepLTS_to_deepaxax = JssVal.x[i6i6]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepLTS_to_deepbask = JssVal.x[i6i6]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepLTS_to_nontuftRS = JssVal.x[i6e6]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepLTS_to_spinstell = JssVal.x[i6e4]
+
+gGABA_deepLTS_to_supLTS = 0
+
+gGABA_deepLTS_to_supaxax = 0
+
+gGABA_deepLTS_to_supbask = 0
+
+gGABA_deepLTS_to_suppyrFRB = 0
+
+gGABA_deepLTS_to_suppyrRS = 0
+
+JssVal.x[0] = 5e-005
+JssVal.x[1] = 2.5e-005
+JssVal.x[2] = 0.0001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepLTS_to_tuftIB = JssVal.x[i6e5]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepLTS_to_tuftRS = JssVal.x[i6e5]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepaxax_to_nontuftRS = JssVal.x[i6e6]
+
+gGABA_deepaxax_to_spinstell = 0
+
+gGABA_deepaxax_to_suppyrFRB = 0
+
+gGABA_deepaxax_to_suppyrRS = 0
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepaxax_to_tuftIB = JssVal.x[i6e5]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepaxax_to_tuftRS = JssVal.x[i6e5]
+
+JssVal.x[0] = 0.0007
+JssVal.x[1] = 0.00035
+JssVal.x[2] = 0.0014
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepbask_to_deepLTS = JssVal.x[i6i6]
+
+JssVal.x[0] = 0.0002
+JssVal.x[1] = 0.0001
+JssVal.x[2] = 0.0004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepbask_to_deepaxax = JssVal.x[i6i6]
+
+JssVal.x[0] = 0.0002
+JssVal.x[1] = 0.0001
+JssVal.x[2] = 0.0004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepbask_to_deepbask = JssVal.x[i6i6]
+
+JssVal.x[0] = 0.0007
+JssVal.x[1] = 0.00035
+JssVal.x[2] = 0.0014
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepbask_to_nontuftRS = JssVal.x[i6e6]
+
+JssVal.x[0] = 0.0015
+JssVal.x[1] = 0.00075
+JssVal.x[2] = 0.003
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepbask_to_spinstell = JssVal.x[i6e4]
+
+JssVal.x[0] = 0.0007
+JssVal.x[1] = 0.00035
+JssVal.x[2] = 0.0014
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepbask_to_tuftIB = JssVal.x[i6e5]
+
+JssVal.x[0] = 0.0007
+JssVal.x[1] = 0.00035
+JssVal.x[2] = 0.0014
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_deepbask_to_tuftRS = JssVal.x[i6e5]
+
+JssVal.x[0] = 0.0003
+JssVal.x[1] = 0.00015
+JssVal.x[2] = 0.0006
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_nRT_to_nRT = JssVal.x[rtrt]
+
+JssVal.x[0] = 5e-005
+JssVal.x[1] = 2.5e-005
+JssVal.x[2] = 0.0001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supLTS_to_deepLTS = JssVal.x[i2i6]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supLTS_to_deepaxax = JssVal.x[i2i6]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supLTS_to_deepbask = JssVal.x[i2i6]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supLTS_to_nontuftRS = JssVal.x[i2e6]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supLTS_to_spinstell = JssVal.x[i2e4]
+
+JssVal.x[0] = 5e-005
+JssVal.x[1] = 2.5e-005
+JssVal.x[2] = 0.0001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supLTS_to_supLTS = JssVal.x[i2i2]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supLTS_to_supaxax = JssVal.x[i2i2]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supLTS_to_supbask = JssVal.x[i2i2]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gGABA_supLTS_to_suppyrFRB = JssVal.x[i2e2]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gGABA_supLTS_to_suppyrRS = JssVal.x[i2e2]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supLTS_to_tuftIB = JssVal.x[i2e5]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supLTS_to_tuftRS = JssVal.x[i2e5]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supaxax_to_nontuftRS = JssVal.x[i2e6]
+
+JssVal.x[0] = 0.0001
+JssVal.x[1] = 5e-005
+JssVal.x[2] = 0.0002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supaxax_to_spinstell = JssVal.x[i2e4]
+
+JssVal.x[0] = 0.0012
+JssVal.x[1] = 0.0006
+JssVal.x[2] = 0.0024
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gGABA_supaxax_to_suppyrFRB = JssVal.x[i2e2]
+
+JssVal.x[0] = 0.0012
+JssVal.x[1] = 0.0006
+JssVal.x[2] = 0.0024
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gGABA_supaxax_to_suppyrRS = JssVal.x[i2e2]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supaxax_to_tuftIB = JssVal.x[i2e5]
+
+JssVal.x[0] = 0.001
+JssVal.x[1] = 0.0005
+JssVal.x[2] = 0.002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supaxax_to_tuftRS = JssVal.x[i2e5]
+
+JssVal.x[0] = 0.0001
+JssVal.x[1] = 5e-005
+JssVal.x[2] = 0.0002
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supbask_to_spinstell = JssVal.x[i2e4]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supbask_to_supLTS = JssVal.x[i2i2]
+
+JssVal.x[0] = 0.0002
+JssVal.x[1] = 0.0001
+JssVal.x[2] = 0.0004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supbask_to_supaxax = JssVal.x[i2i2]
+
+JssVal.x[0] = 0.0002
+JssVal.x[1] = 0.0001
+JssVal.x[2] = 0.0004
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gGABA_supbask_to_supbask = JssVal.x[i2i2]
+
+JssVal.x[0] = 0.0012
+JssVal.x[1] = 0.0006
+JssVal.x[2] = 0.0024
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gGABA_supbask_to_suppyrFRB = JssVal.x[i2e2]
+
+JssVal.x[0] = 0.0012
+JssVal.x[1] = 0.0006
+JssVal.x[2] = 0.0024
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gGABA_supbask_to_suppyrRS = JssVal.x[i2e2]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_TCR_to_deepaxax = JssVal.x[tci6]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_TCR_to_deepbask = JssVal.x[tci6]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_TCR_to_nRT = JssVal.x[tcrt]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_TCR_to_nontuftRS = JssVal.x[tce6]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_TCR_to_spinstell = JssVal.x[tce4]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_TCR_to_supaxax = JssVal.x[tci2]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_TCR_to_supbask = JssVal.x[tci2]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_TCR_to_suppyrFRB = JssVal.x[tce2]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_TCR_to_suppyrRS = JssVal.x[tce2]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_TCR_to_tuftIB = JssVal.x[tce5]
+
+JssVal.x[0] = 0
+JssVal.x[1] = 0
+JssVal.x[2] = 0
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_TCR_to_tuftRS = JssVal.x[tce5]
+
+JssVal.x[0] = 1.5e-005
+JssVal.x[1] = 7.5e-006
+JssVal.x[2] = 3e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_TCR = JssVal.x[e6tc]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_deepLTS = JssVal.x[e6i6]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_deepaxax = JssVal.x[e6i6]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_deepbask = JssVal.x[e6i6]
+
+JssVal.x[0] = 1e-005
+JssVal.x[1] = 5e-006
+JssVal.x[2] = 2e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_nRT = JssVal.x[e6rt]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_nontuftRS = JssVal.x[e6e6]
+
+JssVal.x[0] = 0.000125
+JssVal.x[1] = 6.25e-005
+JssVal.x[2] = 0.00025
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_spinstell = JssVal.x[e6e4]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_supLTS = JssVal.x[e6i2]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_supaxax = JssVal.x[e6i2]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_supbask = JssVal.x[e6i2]
+
+JssVal.x[0] = 0.000125
+JssVal.x[1] = 6.25e-005
+JssVal.x[2] = 0.00025
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_suppyrFRB = JssVal.x[e6e2]
+
+JssVal.x[0] = 0.000125
+JssVal.x[1] = 6.25e-005
+JssVal.x[2] = 0.00025
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_suppyrRS = JssVal.x[e6e2]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_tuftIB = JssVal.x[e6e5]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_nontuftRS_to_tuftRS = JssVal.x[e6e5]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_deepLTS = JssVal.x[e4i6]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_deepaxax = JssVal.x[e4i6]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_deepbask = JssVal.x[e4i6]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_nontuftRS = JssVal.x[e4e6]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_spinstell = JssVal.x[e4e4]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_supLTS = JssVal.x[e4i2]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_supaxax = JssVal.x[e4i2]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_supbask = JssVal.x[e4i2]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_suppyrFRB = JssVal.x[e4e2]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_suppyrRS = JssVal.x[e4e2]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_tuftIB = JssVal.x[e4e5]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_spinstell_to_tuftRS = JssVal.x[e4e5]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrFRB_to_deepLTS = JssVal.x[e2i6]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrFRB_to_deepaxax = JssVal.x[e2i6]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrFRB_to_deepbask = JssVal.x[e2i6]
+
+JssVal.x[0] = 0.000125
+JssVal.x[1] = 6.25e-005
+JssVal.x[2] = 0.00025
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrFRB_to_nontuftRS = JssVal.x[e2e6]
+
+gNMDA_suppyrFRB_to_spinstell = 0
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrFRB_to_supLTS = JssVal.x[e2i2]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrFRB_to_supaxax = JssVal.x[e2i2]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrFRB_to_supbask = JssVal.x[e2i2]
+
+JssVal.x[0] = 6.25e-005
+JssVal.x[1] = 3.125e-005
+JssVal.x[2] = 0.000125
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gNMDA_suppyrFRB_to_suppyrFRB = JssVal.x[e2e2]
+
+JssVal.x[0] = 6.25e-005
+JssVal.x[1] = 3.125e-005
+JssVal.x[2] = 0.000125
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gNMDA_suppyrFRB_to_suppyrRS = JssVal.x[e2e2]
+
+JssVal.x[0] = 2.5e-005
+JssVal.x[1] = 1.25e-005
+JssVal.x[2] = 5e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrFRB_to_tuftIB = JssVal.x[e2e5]
+
+JssVal.x[0] = 2.5e-005
+JssVal.x[1] = 1.25e-005
+JssVal.x[2] = 5e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrFRB_to_tuftRS = JssVal.x[e2e5]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrRS_to_deepLTS = JssVal.x[e2i6]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrRS_to_deepaxax = JssVal.x[e2i6]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrRS_to_deepbask = JssVal.x[e2i6]
+
+JssVal.x[0] = 0.000125
+JssVal.x[1] = 6.25e-005
+JssVal.x[2] = 0.00025
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrRS_to_nontuftRS = JssVal.x[e2e6]
+
+gNMDA_suppyrRS_to_spinstell = 0
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrRS_to_supLTS = JssVal.x[e2i2]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrRS_to_supaxax = JssVal.x[e2i2]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrRS_to_supbask = JssVal.x[e2i2]
+
+JssVal.x[0] = 6.25e-005
+JssVal.x[1] = 3.125e-005
+JssVal.x[2] = 0.000125
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gNMDA_suppyrRS_to_suppyrFRB = JssVal.x[e2e2]
+
+JssVal.x[0] = 6.25e-005
+JssVal.x[1] = 3.125e-005
+JssVal.x[2] = 0.000125
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+JssVal.x[4] = JssVal.x[3]/2
+JssVal.x[5] = JssVal.x[3]*2
+gNMDA_suppyrRS_to_suppyrRS = JssVal.x[e2e2]
+
+JssVal.x[0] = 2.5e-005
+JssVal.x[1] = 1.25e-005
+JssVal.x[2] = 5e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrRS_to_tuftIB = JssVal.x[e2e5]
+
+JssVal.x[0] = 2.5e-005
+JssVal.x[1] = 1.25e-005
+JssVal.x[2] = 5e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_suppyrRS_to_tuftRS = JssVal.x[e2e5]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_deepLTS = JssVal.x[e5i6]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_deepaxax = JssVal.x[e5i6]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_deepbask = JssVal.x[e5i6]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_nontuftRS = JssVal.x[e5e6]
+
+JssVal.x[0] = 0.000125
+JssVal.x[1] = 6.25e-005
+JssVal.x[2] = 0.00025
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_spinstell = JssVal.x[e5e4]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_supLTS = JssVal.x[e5i2]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_supaxax = JssVal.x[e5i2]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_supbask = JssVal.x[e5i2]
+
+JssVal.x[0] = 0.000125
+JssVal.x[1] = 6.25e-005
+JssVal.x[2] = 0.00025
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_suppyrFRB = JssVal.x[e5e2]
+
+JssVal.x[0] = 0.000125
+JssVal.x[1] = 6.25e-005
+JssVal.x[2] = 0.00025
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_suppyrRS = JssVal.x[e5e2]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_tuftIB = JssVal.x[e5e5]
+
+JssVal.x[0] = 0.0005
+JssVal.x[1] = 0.00025
+JssVal.x[2] = 0.001
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftIB_to_tuftRS = JssVal.x[e5e5]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_deepLTS = JssVal.x[e5i6]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_deepaxax = JssVal.x[e5i6]
+
+JssVal.x[0] = 2e-005
+JssVal.x[1] = 1e-005
+JssVal.x[2] = 4e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_deepbask = JssVal.x[e5i6]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_nontuftRS = JssVal.x[e5e6]
+
+JssVal.x[0] = 0.000125
+JssVal.x[1] = 6.25e-005
+JssVal.x[2] = 0.00025
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_spinstell = JssVal.x[e5e4]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_supLTS = JssVal.x[e5i2]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_supaxax = JssVal.x[e5i2]
+
+JssVal.x[0] = 3e-005
+JssVal.x[1] = 1.5e-005
+JssVal.x[2] = 6e-005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_supbask = JssVal.x[e5i2]
+
+JssVal.x[0] = 0.000125
+JssVal.x[1] = 6.25e-005
+JssVal.x[2] = 0.00025
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_suppyrFRB = JssVal.x[e5e2]
+
+JssVal.x[0] = 0.000125
+JssVal.x[1] = 6.25e-005
+JssVal.x[2] = 0.00025
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_suppyrRS = JssVal.x[e5e2]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_tuftIB = JssVal.x[e5e5]
+
+JssVal.x[0] = 0.00025
+JssVal.x[1] = 0.000125
+JssVal.x[2] = 0.0005
+JssVal.x[3] = (JssVal.x[1] + JssVal.x[2])/2
+gNMDA_tuftRS_to_tuftRS = JssVal.x[e5e5]

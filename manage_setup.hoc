@@ -1,0 +1,294 @@
+
+use_load_balance = (load_balance_phase == 3 || load_balance_phase == 5 || load_balance_phase == 7)
+
+{load_file("nrngui.hoc")}
+{localloadfile("fortmap.hoc")}
+{localloadfile("hoc/parlib.hoc")}
+if (fakerank >= 0) pnm.myid += fakerank
+if (fakenhost >= 0) pnm.nhost = fakenhost
+// til the shift bug in the mod files are fixed (table depends on range variable)
+if (1) {
+usetable_naf2 = 0
+usetable_naf = 0
+usetable_naf_tcr = 0
+usetable_napf = 0
+usetable_napf_spinstell = 0
+usetable_napf_tcr = 0
+}
+
+calculate_mechanism_complexity(load_balance_phase == 1)
+if (load_balance_phase == 1) { pc.runworker() pc.done() quit() }
+
+if (load_balance_phase == 3) {
+	read_load_balance_info("splitbal")
+}else if (load_balance_phase == 5) {
+	read_wholecell_info(wholecell_prefix)
+}else if (load_balance_phase == 7) {
+	read_multisplit_info(multisplit_prefix)
+}
+
+{localloadfile("finit.hoc")}
+
+serial = 0 // override serial set in parlib.hoc
+pmesg = 1 && (pc.id == 0)
+pmesg = 0
+small_model = 0 // 0 for full model, set to 1 for 40 cells each type
+if (use_load_balance) { use_traubexact = 0 } // cannot use with load balance
+{localloadfile("hoc/traubcon.hoc")}
+
+{localloadfile("cell_templates.hoc")}
+{localloadfile("net/network_specification_interface.hoc")}
+if (!serial) {localloadfile("hoc/parlib2.hoc")}
+{localloadfile("net/serial_or_par_wrapper.hoc")}
+{localloadfile("net/groucho.hoc")}
+
+proc cxrun() {localobj f
+	f = new File()
+	for pnm.serialize() {
+		f.aopen("cxrun.dat")
+		f.printf("%d %g\n", pnm.myid, tdat_.x[5])		
+		printf("%d %g\n", pnm.myid, tdat_.x[5])		
+		f.close
+	}
+	execerror("stop", "")
+}
+
+if (load_balance_phase == 2) {
+	print_single_split_load_balance_info("splitbal.dat")
+	pc.runworker() pc.done() quit()
+}else if (load_balance_phase == 4) {
+	print_wholecell_info(wholecell_prefix)
+	pc.runworker() pc.done() quit()
+}else if (load_balance_phase == 6) {
+	print_multisplit_info(multisplit_prefix, multisplit_nhost)
+	//execerror("stop", "")
+	pc.runworker() pc.done() quit()
+}else{
+	//print_load_balance_info(0)
+	if (fakerank >= 0) {cxrun() pc.runworker() pc.done() quit()}
+}
+
+want_all_spikes()
+mkhist(50)
+
+objref fihprog_
+//if (pc.id == 0 && pc.nhost < 20) fihprog_ = new FInitializeHandler("progress()")
+fihprog_ = new FInitializeHandler("progress()")
+strdef spkflnm
+{sprint(spkflnm,"data/spikes/sn%d_%s",pc.id,varfn)}
+strdef EFfn
+{sprint(EFfn,"data/efs/en%d_%s",pc.id,varfn)}
+objref mycell, myout
+proc progress() {
+	if (pc.id == 0) {
+		if (t == 0) {print "t = ", t}
+		if (t == 100) {print "t = ", t}
+		if (t == 500) {print "t = ", t}
+		if (t == 1000) {print "t = ", t}
+	}
+	myout = new File()
+	if (t == 0){
+		myout.wopen(spkflnm)
+	} else {myout.aopen(spkflnm)}
+	for i=0, pnm.idvec.size-1 {
+		id = pnm.idvec.x[i]
+		//print "id: ", id
+		mycell = pc.gid2cell(id)
+		//print pnm.spikevec.x[i]
+        	myout.printf("%g\t%d\t%s\n", pnm.spikevec.x[i], id, mycell.name)
+	}
+	myout.close
+	pnm.spikevec.resize(0)
+	pnm.idvec.resize(0)
+	if (jordan_trace == 1) {
+		for i=0, 11 {
+    			myout = new File()
+			if (t == 0){
+				myout.wopen(tfn[i].s)
+			} else {myout.aopen(tfn[i].s)}
+			for j=0, tvec.size-1 {
+				myout.printf("%g %g\n", tvec.x[j], Jtrace[i].x[j])
+			}
+		    	myout.close()
+			Jtrace[i].resize(0)
+		}
+    	}
+	tvec.resize(0)
+
+    	myout = new File()
+	if (t == 0) {
+    		myout.wopen(EFfn)
+	} else {myout.aopen(EFfn)}
+    	for i=0, EFtvec.size-1 {
+		myout.printf("%g %g %g %g %g %g %g %g %g %g %g\n", EFtvec.x[i], EF[0].x[i], EF[1].x[i], EF[2].x[i], EF[3].x[i], EF[4].x[i], EF[5].x[i], EF[6].x[i], EF[7].x[i], EF[8].x[i], EF[9].x[i])
+    	}
+    	myout.close()
+
+	for i = 0, 9 {EF[i].resize(0)}
+	EFtvec.resize(0)
+	cvode.event(t+1, "progress()")
+	if (t == 0) {calEF()}
+}
+
+proc calEF(){local depth localobj c
+	//print "In cal EF at ", pc.id
+	for i=0, 9 { efmm[i] = 0}
+	for i=0, cells.count-1 {
+		//c = pc.gid2cell(i)
+		c = cells.object(i)
+		if (strcmp(c.name,"suppyrFRB") == 0){
+			for j=1, 68 {
+				if (j == 1) {depth = 850
+				} else if (j <= 14) {depth = 885
+				} else if (j <= 25) {depth = 920
+				} else if (j <= 37) {depth = 955
+				} else if (j == 38) {depth = 825
+				} else if (j == 39) {depth = 775
+				} else if (j == 40) {depth = 725
+				} else if (j <= 42) {depth = 690
+				} else if (j <= 44) {depth = 655
+				} else if (j <= 52) {depth = 620
+				} else if (j <= 60) {depth = 585
+				} else if (j <= 68) {depth = 550
+				} else {print "Error"}
+				efmm[0] = efmm[0] + (c.comp[j].v(0.5)*c.comp[j].cm(0.5))/abs(jEFP1 - depth)
+				efmm[1] = efmm[1] + (c.comp[j].v(0.5)*c.comp[j].cm(0.5))/abs(jEFP2 - depth)
+			}
+		}
+		if (strcmp(c.name,"suppyrRS") == 0){
+			for j=1, 68 {
+				if (j == 1) {depth = 850
+				} else if (j <= 13) {depth = 885
+				} else if (j <= 25) {depth = 920
+				} else if (j <= 37) {depth = 955
+				} else if (j == 38) {depth = 825
+				} else if (j == 39) {depth = 775
+				} else if (j == 40) {depth = 725
+				} else if (j <= 42) {depth = 690
+				} else if (j <= 44) {depth = 655
+				} else if (j <= 52) {depth = 620
+				} else if (j <= 60) {depth = 585
+				} else if (j <= 68) {depth = 550
+				} else {print "Error"}
+				efmm[2] = efmm[2] + (c.comp[j].v(0.5)*c.comp[j].cm(0.5))/abs(jEFP1 - depth)
+				efmm[3] = efmm[3] + (c.comp[j].v(0.5)*c.comp[j].cm(0.5))/abs(jEFP2 - depth)
+			}
+		}
+		if (strcmp(c.name,"tuftIB") == 0){
+			for j=1, 61 {
+				if (j == 1) {depth = 850
+				} else if (j <= 12) {depth = 1800
+				} else if (j <= 23) {depth = 1845
+				} else if (j <= 34) {depth = 1890
+				} else if (j == 35) {depth = 1935
+				} else if (j == 36) {depth = 1760
+				} else if (j == 37) {depth = 1685
+				} else if (j == 38) {depth = 1610
+				} else if (j == 39) {depth = 1535
+				} else if (j == 40) {depth = 1460
+				} else if (j == 41) {depth = 1385
+				} else if (j == 42) {depth = 1310
+				} else if (j == 43) {depth = 1235
+				} else if (j == 44) {depth = 1160
+				} else if (j == 45) {depth = 1085
+				} else if (j == 46) {depth = 1010
+				} else if (j == 47) {depth = 935
+				} else if (j <= 55) {depth = 860
+				} else if (j <= 61) {depth = 790
+				} else {print "Error"}
+				efmm[4] = efmm[4] + (c.comp[j].v(0.5)*c.comp[j].cm(0.5))/abs(jEFP1 - depth)
+				efmm[5] = efmm[5] + (c.comp[j].v(0.5)*c.comp[j].cm(0.5))/abs(jEFP2 - depth)
+			}
+		}
+		if (strcmp(c.name,"tuftRS") == 0){
+			for j=1, 61 {
+				if (j == 1) {depth = 850
+				} else if (j <= 12) {depth = 1800
+				} else if (j <= 23) {depth = 1845
+				} else if (j <= 34) {depth = 1890
+				} else if (j == 35) {depth = 1935
+				} else if (j == 36) {depth = 1760
+				} else if (j == 37) {depth = 1685
+				} else if (j == 38) {depth = 1610
+				} else if (j == 39) {depth = 1535
+				} else if (j == 40) {depth = 1460
+				} else if (j == 41) {depth = 1385
+				} else if (j == 42) {depth = 1310
+				} else if (j == 43) {depth = 1235
+				} else if (j == 44) {depth = 1160
+				} else if (j == 45) {depth = 1085
+				} else if (j == 46) {depth = 1010
+				} else if (j == 47) {depth = 935
+				} else if (j <= 55) {depth = 860
+				} else if (j <= 61) {depth = 790
+				} else {print "Error"}
+				efmm[6] = efmm[6] + (c.comp[j].v(0.5)*c.comp[j].cm(0.5))/abs(jEFP1 - depth)
+				efmm[7] = efmm[7] + (c.comp[j].v(0.5)*c.comp[j].cm(0.5))/abs(jEFP2 - depth)
+			}
+		}
+		if (strcmp(c.name,"nontuftRS") == 0){
+			for j=1, 50 {
+				if (j == 1) {depth = 850
+				} else if (j <= 12) {depth = 2200
+				} else if (j <= 23) {depth = 2245
+				} else if (j <= 34) {depth = 2290
+				} else if (j == 35) {depth = 2335
+				} else if (j == 36) {depth = 2175
+				} else if (j == 37) {depth = 2125
+				} else if (j == 38) {depth = 2075
+				} else if (j == 39) {depth = 2025
+				} else if (j == 40) {depth = 1975
+				} else if (j == 41) {depth = 1925
+				} else if (j == 42) {depth = 1875
+				} else if (j == 43) {depth = 1825
+				} else if (j == 44) {depth = 1775
+				} else if (j <= 50) {depth = 1725
+				} else {print "Error"}
+				efmm[8] = efmm[8] + (c.comp[j].v(0.5)*c.comp[j].cm(0.5))/abs(jEFP1 - depth)
+				efmm[9] = efmm[9] + (c.comp[j].v(0.5)*c.comp[j].cm(0.5))/abs(jEFP2 - depth)
+			}
+		}
+	}
+/*	print "EFP", efmm[0], efmm[1], pc.id
+	j = 0
+	for i = 0, EFtvec.size-1 {
+		if (t == EFtvec.x[i]) {
+			print "Found same time in EFtvec! ", efmm[0], efmm[1], EF1mmvec.x[i], EF2mmvec.x[i]
+			EF1mmvec.x[i] = EF1mmvec.x[i] + efmm[0]
+			EF2mmvec.x[i] = EF2mmvec.x[i] + efmm[1]
+			print EF1mmvec.x[i], EF2mmvec.x[i]
+			j = 1
+		}
+	}
+	if (j == 0){*/
+	EFtvec.append(t)
+	for i = 0, 9 {EF[i].append(efmm[i])}
+//	}
+	cvode.event(t+dt, "calEF()")
+	//print "EFPend", pc.id, EFtvec.size
+}
+
+if (nthread > 1 && pc.nhost == 1) { pc.nthread(nthread, 1) }
+
+if (use_traubexact) {
+	localloadfile("hoc/traubcon_net.hoc")
+	if (pc.id == 0) {
+		print "before setting traub exact connection coefficients, setuptime = ", startsw() - setuptime
+	}
+	define_shape() // force all internal structures to be valid
+	reset_connection_coefficients()
+}
+
+proc methods() {
+	pc.spike_compress(spike_compress, spike_compress != 0, multisend)
+	cvode.queue_mode(spike_compress != 0, selfevents)
+	cvode.cache_efficient(cacheeffic)
+	//cvode.event(t+dt, "calEF()")
+}
+methods()
+
+if (load_balance_phase == 7) { pc.multisplit() }
+
+setuptime = startsw() - setuptime
+if (pc.id == 0) {print "SetupTime: ", setuptime}
+

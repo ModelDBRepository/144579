@@ -1,0 +1,349 @@
+setuptime = startsw()
+{xopen("hoc/defvar.hoc")}
+
+// load balancing implies several runs.
+// 0) load balancing just plain off (but will read mcomplex.dat if exists)
+// 1) create a mcomplex.dat file (only one cpu needed)
+// 2) create single split balance.dat file (any number of cpus can be used)
+//  manually: run the balcomp program to create balance.ncpu files
+// 3) run with single split load balancing on (ncpu corresponding to files from balcomp)
+// add more for whole cell and multisplit load balancing
+// 4) create whole cell load balance file
+// 5) run with whole cell load balance file
+// 6) create multisplit load balance information file
+// 7) run using multisplit load balance
+default_var("load_balance_phase", 0)
+
+default_var("one_tenth_ncell", 0)
+default_var("default_delay", 0.5)
+default_var("ranseedbase", 1)
+default_var("wholecell_prefix", "cxwhole")
+default_var("multisplit_prefix", "cx")
+default_var("multisplit_nhost", 256)
+default_var("msoptfactor", 0.8)
+default_var("nthread", 1)
+default_var("savestatetest", 0)
+
+default_var("use_gap", 1)
+default_var("use_ectopic", 0)
+default_var("use_inject", 1)
+default_var("awake", 1)
+default_var("use_traubexact", 0)
+default_var("jordan_trace",1)
+default_var("Figure", 0)
+default_var("picrotoxin", 1)
+default_var("NBQX", 1)
+default_var("scale_NMDA_conductances", 1)
+default_var("scale_TCR_output", 1)
+
+default_var("jEFP1",1000)
+default_var("jEFP2",2000)
+
+
+default_var("spike_compress", 5)
+default_var("cacheeffic", 1)  // for multisplit it is always 1
+default_var("multisend", 0)
+default_var("selfevents", 0)
+
+default_var("fakerank", -1)
+default_var("fakenhost", -1)
+default_var("parmset",3)
+
+default_var("Control", 0)
+
+if (parmset==1) {
+    default_var("e2e2",2)
+    default_var("e2e5",2)
+    default_var("e2e6",1)
+    default_var("e2i2",1)
+    default_var("e2i6",1)
+    default_var("e4e2",1)
+    default_var("e4e4",1)
+    default_var("e4e5",1)
+    default_var("e4e6",2)
+    default_var("e4i2",1)
+    default_var("e4i6",1)
+    default_var("e5e2",1)
+    default_var("e5e4",1)
+    default_var("e5e5",1)
+    default_var("e5e6",2)
+    default_var("e5i2",2)
+    default_var("e5i6",2)
+    default_var("e6e2",1)
+    default_var("e6e4",1)
+    default_var("e6e5",2)
+    default_var("e6e6",1)
+    default_var("e6i2",2)
+    default_var("e6i6",2)
+    default_var("e6rt",1)
+    default_var("e6tc",1)
+    default_var("i2e2",1)
+    default_var("i2e4",1)
+    default_var("i2e5",1)
+    default_var("i2e6",2)
+    default_var("i2i2",2)
+    default_var("i2i6",1)
+    default_var("i6e4",1)
+    default_var("i6e5",1)
+    default_var("i6e6",2)
+    default_var("i6i6",2)
+    default_var("rtrt",1)
+    default_var("rttc",2)
+    default_var("tce2",1)
+    default_var("tce4",2)
+    default_var("tce5",1)
+    default_var("tce6",1)
+    default_var("tci2",2)
+    default_var("tci6",1)
+    default_var("tcrt",1)
+
+}
+
+if (parmset==2) {
+    default_var("e2e2",2)
+    default_var("e2e5",2)
+    default_var("e2e6",1)
+    default_var("e2i2",1)
+    default_var("e2i6",1)
+    default_var("e4e2",1)
+    default_var("e4e4",1)
+    default_var("e4e5",2)
+    default_var("e4e6",1)
+    default_var("e4i2",2)
+    default_var("e4i6",1)
+    default_var("e5e2",1)
+    default_var("e5e4",1)
+    default_var("e5e5",1)
+    default_var("e5e6",1)
+    default_var("e5i2",2)
+    default_var("e5i6",2)
+    default_var("e6e2",2)
+    default_var("e6e4",1)
+    default_var("e6e5",1)
+    default_var("e6e6",1)
+    default_var("e6i2",2)
+    default_var("e6i6",2)
+    default_var("e6rt",2)
+    default_var("e6tc",2)
+    default_var("i2e2",2)
+    default_var("i2e4",1)
+    default_var("i2e5",1)
+    default_var("i2e6",1)
+    default_var("i2i2",2)
+    default_var("i2i6",2)
+    default_var("i6e4",1)
+    default_var("i6e5",2)
+    default_var("i6e6",2)
+    default_var("i6i6",2)
+    default_var("rtrt",2)
+    default_var("rttc",1)
+    default_var("tce2",1)
+    default_var("tce4",1)
+    default_var("tce5",1)
+    default_var("tce6",1)
+    default_var("tci2",1)
+    default_var("tci6",1)
+    default_var("tcrt",1)
+}
+
+if (parmset==3) {
+    default_var("e2e2",0)
+    default_var("e2e5",0)
+    default_var("e2e6",0)
+    default_var("e2i2",0)
+    default_var("e2i6",0)
+    default_var("e4e2",0)
+    default_var("e4e4",0)
+    default_var("e4e5",0)
+    default_var("e4e6",0)
+    default_var("e4i2",0)
+    default_var("e4i6",0)
+    default_var("e5e2",0)
+    default_var("e5e4",0)
+    default_var("e5e5",0)
+    default_var("e5e6",0)
+    default_var("e5i2",0)
+    default_var("e5i6",0)
+    default_var("e6e2",0)
+    default_var("e6e4",0)
+    default_var("e6e5",0)
+    default_var("e6e6",0)
+    default_var("e6i2",0)
+    default_var("e6i6",0)
+    default_var("e6rt",0)
+    default_var("e6tc",0)
+    default_var("i2e2",0)
+    default_var("i2e4",0)
+    default_var("i2e5",0)
+    default_var("i2e6",0)
+    default_var("i2i2",0)
+    default_var("i2i6",0)
+    default_var("i6e4",0)
+    default_var("i6e5",0)
+    default_var("i6e6",0)
+    default_var("i6i6",0)
+    default_var("rtrt",0)
+    default_var("rttc",0)
+    default_var("tce2",0)
+    default_var("tce4",0)
+    default_var("tce5",0)
+    default_var("tce6",0)
+    default_var("tci2",0)
+    default_var("tci6",0)
+    default_var("tcrt",0)
+}
+
+// midpoint set
+if (parmset==4) {
+    default_var("e2e2",3)
+    default_var("e2e5",3)
+    default_var("e2e6",3)
+    default_var("e2i2",3)
+    default_var("e2i6",3)
+    default_var("e4e2",3)
+    default_var("e4e4",3)
+    default_var("e4e5",3)
+    default_var("e4e6",3)
+    default_var("e4i2",3)
+    default_var("e4i6",3)
+    default_var("e5e2",3)
+    default_var("e5e4",3)
+    default_var("e5e5",3)
+    default_var("e5e6",3)
+    default_var("e5i2",3)
+    default_var("e5i6",3)
+    default_var("e6e2",3)
+    default_var("e6e4",3)
+    default_var("e6e5",3)
+    default_var("e6e6",3)
+    default_var("e6i2",3)
+    default_var("e6i6",3)
+    default_var("e6rt",3)
+    default_var("e6tc",3)
+    default_var("i2e2",3)
+    default_var("i2e4",3)
+    default_var("i2e5",3)
+    default_var("i2e6",3)
+    default_var("i2i2",3)
+    default_var("i2i6",3)
+    default_var("i6e4",3)
+    default_var("i6e5",3)
+    default_var("i6e6",3)
+    default_var("i6i6",3)
+    default_var("rtrt",3)
+    default_var("rttc",3)
+    default_var("tce2",3)
+    default_var("tce4",3)
+    default_var("tce5",3)
+    default_var("tce6",3)
+    default_var("tci2",3)
+    default_var("tci6",3)
+    default_var("tcrt",3)
+}
+
+use_p2c_net_connections = 0 // not 0, requires p2c emitted  map and compmap files
+
+strdef varfn
+if (Control==1) {
+sprint(varfn, "control.dat")
+} else {
+sprint(varfn, "%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d.dat", e2e2,e2e5,e2e6,e2i2,e2i6,e4e2,e4e4,e4e5,e4e6,e4i2,e4i6,e5e2,e5e4,e5e5,e5e6,e5i2,e5i6,e6e2,e6e4,e6e5,e6e6,e6i2,e6i6,i2e2,i2e4,i2e5,i2e6,i2i2,i2i6,i6e4,i6e5,i6e6,i6i6)
+}
+
+objref tfn[12]
+strdef trace
+objref Jtrace[12]
+
+
+if (jordan_trace == 1){
+{sprint(trace, "data/traces/trace_suppyrRS_%s",varfn)}
+tfn[0] = new String(trace)
+{sprint(trace, "data/traces/trace_suppyrFRB_%s",varfn)}
+tfn[1] = new String(trace)
+{sprint(trace, "data/traces/trace_supaxax_%s",varfn)}
+tfn[2] = new String(trace)
+{sprint(trace, "data/traces/trace_spinstell_%s",varfn)}
+tfn[3] = new String(trace)
+{sprint(trace, "data/traces/trace_tuftIB_%s",varfn)}
+tfn[4] = new String(trace)
+{sprint(trace, "data/traces/trace_tuftRS_%s",varfn)}
+tfn[5] = new String(trace)
+{sprint(trace, "data/traces/trace_nontuftRS_%s",varfn)}
+tfn[6] = new String(trace)
+{sprint(trace, "data/traces/trace_deepaxax_%s",varfn)}
+tfn[7] = new String(trace)
+{sprint(trace, "data/traces/trace_deepbask_%s",varfn)}
+tfn[8] = new String(trace)
+{sprint(trace, "data/traces/trace_supbask_%s",varfn)}
+tfn[9] = new String(trace)
+{sprint(trace, "data/traces/trace_supLTS_%s",varfn)}
+tfn[10] = new String(trace)
+{sprint(trace, "data/traces/trace_deepLTS_%s",varfn)}
+tfn[11] = new String(trace)
+for i = 0, 11 {
+	Jtrace[i] = new Vector()
+}
+}
+
+objref EF[10]
+for i = 0, 9 {
+	EF[i] = new Vector()
+}
+
+objref tvec, EFtvec
+tvec = new Vector()
+EFtvec = new Vector()
+double efmm[10]
+
+{localloadfile("manage_setup.hoc")}
+
+//{localloadfile("syndump.hoc")}
+// quit()
+
+steps_per_ms = 40
+dt = .025
+secondorder = 2
+default_var("mytstop", 3000)
+tstop = mytstop
+
+
+//{load_file("balanal.hoc")}
+//if (pc.nhost >= 128) {thread_per_piece()}
+
+if (0) { pc.runworker()  pc.done() quit() }
+
+//{finitialize(-65) cvode_local(1) cvode.atol(1e-4)} // the finitialze avoids /0 in BREAKPOINT
+
+prun()
+
+//if (pc.nhost >= 128) {balanalfile("balanal.dat")}
+
+endtime = startsw()
+
+if (pc.id == 0) { print "tstop = ", tstop }
+if (pc.id == 0) { print "RunTime: ", runtime }
+
+//{localloadfile("prcellstate.hoc")}
+proc pcs() {local spgid
+	spgid = thishost_gid($1)
+	if (spgid >= 0) prcellstate(load_balance_phase, spgid)
+	pc.runworker()  pc.done() quit()
+}
+//pcs(103)
+
+
+// if (pc.nhost > 5) {cvode_active(1)} // to count equations
+{pc.runworker()}
+
+print "Maximum integration interval: ", mindelay()
+getstat()
+prhist()
+//print_spike_stat_info()
+
+{pc.done()}
+
+perf2file()
+endtime = startsw() - endtime
+print "endtime ", endtime
+
+if (!serial) { quit() }
